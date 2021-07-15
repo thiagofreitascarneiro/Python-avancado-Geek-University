@@ -1,0 +1,3 @@
+Eu estou estudando na Geek University e estou aprendendo muito no curso de Programação em Python: Essencial
+Outro texto.
+Este curso está me ajudando a se tornar um expert em Python.
