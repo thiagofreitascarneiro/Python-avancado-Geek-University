@@ -1,30 +1,16 @@
-arquivo = input("Insira o arquivo a ser aberto: ")
-with open(f"{arquivo}.txt", mode='r', encoding='UTF-8') as arq:
-    with open(f"{arquivo}.modificado.txt", mode='w', encoding='UTF-8') as arq2:
-        letras = arq.read()
-        for i in letras:
-            if i in 'aeiou':
-                i = '*'
-                arq2.write(i)
-            else:
-                arq2.write(i)
+'''
+convertendo letra maiuscula em minuscula
 
-# -*- coding: cp1252 -*-
-nomeArquivo = input(f'Entre com o nome de O Arquivo :-> ')
+'''
+
+arquivo = input('Insira o nome do arquivo: ')
 
 try:
-    with open(nomeArquivo, 'r') as arquivo:
-        linhas = arquivo.read()
-        novo = linhas.replace('a', '*').replace('A', '*').replace('a', '*').replace('E', '*').replace('e', '*').replace(
-            'I', '*').replace('i', '*').replace('O', '*').replace('o', '*').replace('U', '*').replace('u', '*')
-
-        try:
-            saidaArquivo = nomeArquivo + '.novo.txt'
-            with open(saidaArquivo, 'w') as saida:
-                saida.writelines(novo)
-
-        except FileNotFoundError:
-            print('Arquivo não achado')
-
+    with open(f'{arquivo}', 'r') as arq:
+        with open(f'{arquivo}.maiuscula', 'w') as arq2:
+            valor = arq.read()
+            for letra in valor:
+                maisc = letra.upper()
+                arq2.write(maisc)
 except FileNotFoundError:
-    print('Arquivo não achado')
+    print('problema com arquivo ou diretório.')
